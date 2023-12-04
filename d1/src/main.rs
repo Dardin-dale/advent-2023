@@ -6,7 +6,7 @@ use std::path::Path;
 fn main() {
     let mut result: u32 = 0;
     // File input.txt must exist in the current path
-    if let Ok(lines) = read_lines("./test.txt") {
+    if let Ok(lines) = read_lines("./input.txt") {
         for line in lines {
             if let Ok(val) = line {
                 let mut first = '\0';
@@ -36,6 +36,7 @@ fn main() {
                         j += 1;
                         continue;
                     }
+                    // PART 2
                     if is_worth_parse(&c) {
                         j = j + 2;
                         while j-i < 6 {
@@ -71,7 +72,7 @@ fn main() {
                 s1.push(last);
                 let n1: u32 = s1.parse().expect(&("Not a Number: ".to_owned()+&s1));
                 result += n1;
-                println!("{}, {}, {}", val, n1, result);
+                // println!("{}, {}, {}", val, n1, result);
             }
         }
     }
